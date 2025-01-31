@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    height: 100vh;
+    background-color: aqua;
+    
+    display: flex;
+}
+
+footer {
+    background-color: black;
+    height: 50vh;
+}
+
+.black_bar {
+    height: 7vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 50%;
+}
+
+#top_bar {
+    position: absolute;
+}
+
+#bottom_bar {
+    position: relative;
+    top: 93vh;
+}
+
+
+
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 512px) {
+    
+    h1 {
+        font-size: 2rem;  
+    }
+
+    nav .menu-flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    h2 {
+        display: none;
+    }
+
+}
