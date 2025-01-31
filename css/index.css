@@ -4,15 +4,20 @@
 }
 
 main {
+    width: 100vw;
     height: 100vh;
-    background-color: aqua;
-    
-    display: flex;
+    background-image: url("../media/index/bg/index-bg.png");
+    background-size: cover;
+    background-position: center 25%;
 }
 
 footer {
-    background-color: black;
+    width: 100vw;
+    height: 100vh;
+   background-image: url("../media/circuit/bg.png");
     height: 50vh;
+    background-size: cover;
+    background-position: center 25%;
 }
 
 .black_bar {
@@ -30,7 +35,6 @@ footer {
     position: relative;
     top: 93vh;
 }
-
 
 
 
