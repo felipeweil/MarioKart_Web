@@ -25,23 +25,58 @@
             box-shadow: 0 0 10px rgba(88, 88, 88, 0.2);
             position: relative;
         }
-        . left {
+        .left { /*Selección de vehículos*/
             width: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
         }
-        . right {
+        .right { /*Mario en el vehículo seleccionado*/
             width: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
+        .btnA {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .btnB{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="left">
+            
+        </div>
+        <div class="right">
+
+        </div>
+
+        <button class="btnA" onclick="window.location.href='index.html'">
+            <img src="btnA" alt="A">
+        </button>
+        <button class="btnB" onclick="window.location.href='character.html'">
+            <img src="btnB" alt="B">
+        </button>
+    </div>
+
+    <script> /*Vehículos*/
+
+    </script>
     
 </body>
 </html>
