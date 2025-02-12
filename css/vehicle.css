@@ -50,6 +50,7 @@ main {
     height: 1080px;
     background: rgba(0,0,0,0.5);
     border-radius: 8px; 
+    z-index: 1;
 }
 
 .vehicle {
