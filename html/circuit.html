@@ -25,16 +25,25 @@
         </div>
         <div class="circuitos">
             <div id="copa-hongo" class="circuitos-lista hidden">
-                <button class="circuit" data-link="">Mario Kart Stadium</button>
-                <button class="circuit" data-link="">Water Park</button>
-                <button class="circuit" data-link="">Sweet Sweet Canyon</button>
-                <button class="circuit" data-link="">Thwomp Ruins</button>
+                <button class="circuit" data-link="seleccion-personajes.html"><img src="../media/circuit/Circuitos/champiñon/estadio mariokart.jpg"alt="Mario Kart Stadium">Mario Kart Stadium </button>
+                <button class="circuit" data-link="seleccion-personajes.html">Water Park</button>
+                <button class="circuit" data-link="seleccion-personajes.html">Sweet Sweet Canyon</button>
+                <button class="circuit" data-link="seleccion-personajes.html">Thwomp Ruins</button>
             </div>
         </div>
-        <div class="barra">
-            <img src="../media/circuit/Barra.png" alt="Barra de Circuitos">
-        </div>
     </div>
+
+    <div class="barra">
+        <img src="../media/circuit/Barra.png" alt="Barra de Circuitos">
+    </div>
+
+    <button id="btnB" onclick="location.href='index.html'">
+        <img src="../media/general/btnB.png" alt="Volver">
+    </button>
+    <button id="btnA" onclick="location.href='character.html'">
+        <img src="../media/general/btnA.png" alt="Aceptar">
+    </button>
+    
     <script>
         document.querySelectorAll('.icon').forEach(icon => {
             icon.addEventListener('click', () => {
