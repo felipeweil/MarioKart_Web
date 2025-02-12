@@ -21,6 +21,10 @@ body {
     justify-content: center; 
     gap: 10px;
 }
+.iconsfila1 {
+    margin-bottom: 20px; 
+}
+
 .icon img {
     width: 150px;
     height: 150px;
@@ -29,14 +33,14 @@ body {
     border: none;  
 }
 button {
-    background: none; /* Elimina cualquier fondo */
-    border: none; /* Elimina el borde */
-    padding: 0; /* Evita rellenos extra */
+    background: none; 
+    border: none; 
+    padding: 0; 
 }
 
 button img {
-    display: block; /* Evita márgenes extra alrededor de la imagen */
-    background: transparent; /* Asegura transparencia */
+    display: block; 
+    background: transparent; 
 }
 #copa-champinon {
     display: flex;
