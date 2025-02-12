@@ -3,7 +3,6 @@
     padding: 0;
 }
 body {
-    font-family: Arial, sans-serif;
     background-image:url("../media/circuit/bg.png");
 }
 .container {
@@ -12,36 +11,51 @@ body {
 }
 .icons {
     display: flex;
-    flex-direction: column; /* Asegura que las filas estén una encima de otra */
+    flex-direction: column;
     justify-content: center;
     margin: 20px;
-}
-.circuitos {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
+    background: none; 
 }
 .iconsfila1, .iconsfila2 {
     display: flex;
-    justify-content: center; /* Centra los íconos en la fila */
-    gap: 10px; /* Espacio entre los íconos */
+    justify-content: center; 
+    gap: 10px;
 }
 .icon img {
     width: 150px;
     height: 150px;
-    cursor: pointer;  
+    background: none; 
+    box-shadow: none; 
+    border: none;  
+}
+button {
+    background: none; /* Elimina cualquier fondo */
+    border: none; /* Elimina el borde */
+    padding: 0; /* Evita rellenos extra */
+}
+
+button img {
+    display: block; /* Evita márgenes extra alrededor de la imagen */
+    background: transparent; /* Asegura transparencia */
+}
+#copa-champinon {
+    display: flex;
+}
+.circuitos-lista {
+    display: none;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 10px;
 }
 .circuitos-lista button {
     display: block;
     margin: 10px auto;
     padding: 10px;
-    background-color: #444;
     border: none;
-    color: white;
     cursor: pointer;
 }
 .circuitos-lista button:hover {
-    background-color: #666;
+    background-color: #fff700; 
 }
 .barra img {
     width: 100%;
@@ -69,10 +83,5 @@ body {
     border: none;
     cursor: pointer;
 }
-.circuitos-lista {
-    /* display: none; Se ocultan por defecto */
-    margin-top: 20px;
-    justify-content: center;
-    gap: 10px; /* Espacio entre circuitos */
-}
+
 
