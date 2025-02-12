@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Circuit Selection Page</seleccion circuitos>
+        <link rel="stylesheet" href="../css/circuit.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="icons">
+            <button class="icon" data-circuit="copa-hongo"><img src="../media/circuit/mushroom_icon.png" alt="Copa Hongo"></button>
+            <button class="icon" data-circuit="copa-flor"><img src="../media/circuit/flower_icon.png" alt="Copa Flor"></button>
+            <button class="icon" data-circuit="copa-estrella"><img src="../media/circuit/star_icon.png" alt="Copa Estrella"></button>
+            <button class="icon" data-circuit="copa-corona"><img src="../media/circuit/special_icon.png" alt="Copa Corona"></button>
+            <button class="icon" data-circuit="copa-yoshi"><img src="../media/circuit/egg_icon.png" alt="Copa Yoshi"></button>
+            <button class="icon" data-circuit="copa-crossing"><img src="../media/circuit/crossing_icon.png" alt="Copa Crossing"></button>
+            <button class="icon" data-circuit="copa-caparazon"><img src="../media/circuit/shell_icon.png" alt="Copa Caparazon"></button>
+            <button class="icon" data-circuit="copa-platano"><img src="../media/circuit/banana_icon.png" alt="Copa Platano"></button>
+            <button class="icon" data-circuit="copa-hoja"><img src="../media/circuit/leaf_icon.png" alt="Copa Hoja"></button>
+            <button class="icon" data-circuit="copa-rayo"><img src="../media/circuit/lightning_icon.png" alt="Copa Rayo"></button>
+            <button class="icon" data-circuit="copa-trifuerza"><img src="../media/circuit/triforce_icon.png" alt="Copa Trifuerza"></button>
+            <button class="icon" data-circuit="copa-campana"><img src="../media/circuit/bell_icon.png" alt="Copa Campana"></button>
+            
+        </div>
+        <div class="circuitos">
+            <div id="copa-hongo" class="circuitos-lista hidden">
+                <button class="circuit" data-link="seleccion-personajes.html">Mario Kart Stadium</button>
+                <button class="circuit" data-link="seleccion-personajes.html">Water Park</button>
+                <button class="circuit" data-link="seleccion-personajes.html">Sweet Sweet Canyon</button>
+                <button class="circuit" data-link="seleccion-personajes.html">Thwomp Ruins</button>
+            </div>
+        </div>
+        <div class="barra">
+            <img src="../media/circuit/Barra.png" alt="Barra de Circuitos">
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.icon').forEach(icon => {
+            icon.addEventListener('click', () => {
+                document.querySelectorAll('.circuitos-lista').forEach(list => {
+                    list.classList.add('hidden');
+                });
+                document.getElementById(icon.getAttribute('data-circuit')).classList.remove('hidden');
+            });
+        });
+
+        document.querySelectorAll('.circuit').forEach(button => {
+            button.addEventListener('click', () => {
+                window.location.href = button.getAttribute('data-link');
+            });
+        });
+    </script>
 </body>
 </html>
