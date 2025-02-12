@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <div class="icons">
+
             <div class="iconsfila1">
                 <button class="icon" data-circuit="copa-hongo"><img src="../media/circuit/iconos/mushroom_icon.png" alt="Copa Hongo"></button>
                 <button class="icon" data-circuit="copa-flor"><img src="../media/circuit/iconos/flower_icon.png" alt="Copa Flor"></button>
@@ -148,6 +149,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+document.querySelectorAll('.icon img').forEach(icon => {
+    icon.addEventListener('click', function() {
+        document.querySelectorAll('.icon img').forEach(img => img.classList.remove('seleccionado'));
+        
+        this.classList.add('seleccionado');
+    });
+});
+
     </script>
 </body>
 </html>

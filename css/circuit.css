@@ -41,6 +41,7 @@ button {
 button img {
     display: block; 
     background: transparent; 
+    cursor: pointer;
 }
 #copa-champinon {
     display: flex;
@@ -86,6 +87,9 @@ button img {
     background: none;
     border: none;
     cursor: pointer;
+}
+.icon img.seleccionado {
+    filter: brightness(1.5) sepia(1) hue-rotate(20deg) saturate(3);
 }
 
 
