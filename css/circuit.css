@@ -16,19 +16,20 @@ body {
     justify-content: center;
     margin: 20px;
 }
+.circuitos {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
 .iconsfila1, .iconsfila2 {
     display: flex;
     justify-content: center; /* Centra los íconos en la fila */
     gap: 10px; /* Espacio entre los íconos */
 }
 .icon img {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-}
-.circuitos-lista {
-    display: none;
-    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;  
 }
 .circuitos-lista button {
     display: block;
@@ -68,3 +69,10 @@ body {
     border: none;
     cursor: pointer;
 }
+.circuitos-lista {
+    /* display: none; Se ocultan por defecto */
+    margin-top: 20px;
+    justify-content: center;
+    gap: 10px; /* Espacio entre circuitos */
+}
+

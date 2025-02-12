@@ -49,14 +49,14 @@
                 <button class="circuit" data-link="seleccion-personajes.html"><img src="../media/circuit/Circuitos/estrella/cumbre wario.jpg"alt="Cumbre Wario"></button>
             </div>
              <!-- Copa Especial -->
-             <div id="copa-especial" class="circuitos-lista hidden">
+             <div id="copa-corona" class="circuitos-lista hidden">
                 <button class="circuit" data-link="seleccion-personajes.html"><img src="../media/circuit/Circuitos/corona/ruta celeste.jpg"alt="Ruta Celeste"></button>
                 <button class="circuit" data-link="seleccion-personajes.html"><img src="../media/circuit/Circuitos/corona/dunas huesitos.jpg"alt="Dunas Huesitos"></button>
                 <button class="circuit" data-link="seleccion-personajes.html"><img src="../media/circuit/Circuitos/corona/castillo bowser.jpg"alt="Castillo Bowser"></button>
                 <button class="circuit" data-link="seleccion-personajes.html"><img src="../media/circuit/Circuitos/corona/senda arcoiris.jpg"alt="Senda Arcoiris"></button>
             </div>
              <!-- Copa Huevo -->
-             <div id="copa-huevo" class="circuitos-lista hidden">
+             <div id="copa-yoshi" class="circuitos-lista hidden">
                 <button class="circuit" data-link="seleccion-personajes.html"><img src="../media/circuit/Circuitos/yoshi/circuito de yoshi.jpg"alt="Circuito Yoshi"></button>
                 <button class="circuit" data-link="seleccion-personajes.html"><img src="../media/circuit/Circuitos/yoshi/estadio excitebike.jpg"alt="Estadio Excitebike"></button>
                 <button class="circuit" data-link="seleccion-personajes.html"><img src="../media/circuit/Circuitos/yoshi/ruta del dragon.jpg"alt="Ruta del Dragón"></button>
@@ -91,7 +91,7 @@
                 <button class="circuit" data-link="seleccion-personajes.html"><img src="../media/circuit/Circuitos/hoja/valle de yoshi.jpg"alt="Valle Yoshi"></button>
             </div>
              <!-- Copa Centella -->
-             <div id="copa-centella" class="circuitos-lista hidden">
+             <div id="copa-rayo" class="circuitos-lista hidden">
                 <button class="circuit" data-link="seleccion-personajes.html"><img src="../media/circuit/Circuitos/rayo/reloj tick tack.jpg"alt="Reloj Tick Tack"></button>
                 <button class="circuit" data-link="seleccion-personajes.html"><img src="../media/circuit/Circuitos/rayo/tuberias planta piraña.jpg"alt="Tuberías Planta Piraña"></button>
                 <button class="circuit" data-link="seleccion-personajes.html"><img src="../media/circuit/Circuitos/rayo/volcan gruñon.jpg"alt="Volcán gruñón"></button>
@@ -126,20 +126,31 @@
     </button>
     
     <script>
-        document.querySelectorAll('.icon').forEach(icon => {
-            icon.addEventListener('click', () => {
-                document.querySelectorAll('.circuitos-lista').forEach(list => {
-                    list.classList.add('hidden');
-                });
-                document.getElementById(icon.getAttribute('data-circuit')).classList.remove('hidden');
-            });
-        });
+document.addEventListener("DOMContentLoaded", function () {
+    // Guardamos la copa visible por defecto
+    let copaVisible = document.getElementById('copa-champinon');
 
-        document.querySelectorAll('.circuit').forEach(button => {
-            button.addEventListener('click', () => {
-                window.location.href = button.getAttribute('data-link');
-            });
+    document.querySelectorAll('.icon').forEach(icon => {
+        icon.addEventListener('click', function () {
+            console.log("Botón presionado:", this.getAttribute('data-circuit'));
+
+            // Ocultar la copa actualmente visible
+            if (copaVisible) {
+                copaVisible.style.display = "none";
+            }
+
+            // Mostrar la nueva copa seleccionada
+            let nuevoCircuito = document.getElementById(this.getAttribute('data-circuit'));
+            if (nuevoCircuito) {
+                nuevoCircuito.style.display = "flex";
+                copaVisible = nuevoCircuito; // Actualizar la referencia
+                console.log("Mostrando:", nuevoCircuito.id);
+            } else {
+                console.error("No se encontró el circuito con ID:", this.getAttribute('data-circuit'));
+            }
         });
+    });
+});
     </script>
 </body>
 </html>
