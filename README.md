@@ -13,4 +13,5 @@
 - Only Mario can be selected
 
 ## VEHICLE PAGE
+- Contains link to character.html and index.html
 -  Only one car can be selected
