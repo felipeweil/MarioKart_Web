@@ -4,9 +4,7 @@
 }
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #222;
-    color: white;
+    background-image:url("../media/circuit/bg.png");
 }
 .container {
     max-width: 800px;
@@ -14,8 +12,14 @@ body {
 }
 .icons {
     display: flex;
+    flex-direction: column; /* Asegura que las filas estén una encima de otra */
     justify-content: center;
     margin: 20px;
+}
+.iconsfila1, .iconsfila2 {
+    display: flex;
+    justify-content: center; /* Centra los íconos en la fila */
+    gap: 10px; /* Espacio entre los íconos */
 }
 .icon img {
     width: 50px;
