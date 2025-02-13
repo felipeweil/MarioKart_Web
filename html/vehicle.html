@@ -11,10 +11,12 @@
 
 <body>
     <main>
+        <!-- Sección izquierda (Vehículos) -->
         <section class="left">
+            <div class="black-background-vehicle"></div>
             <div class="vehicle-container">
                 <button class="arrow left-arrow" onclick="changeVehicle(-1)">
-                    <img src="" alt="Anterior">
+                    <img src="../media/vehicles/flecha-izq.png" alt="Anterior">
                 </button>
 
                 <div class="vehicle-background">
@@ -22,32 +24,53 @@
                 </div>
                 
                 <button class="arrow right-arrow" onclick="changeVehicle(1)">
-                    <img src="" alt="Siguiente">
+                    <img src="../media/vehicles/flecha_drch.png" alt="Siguiente">
                 </button>
             </div>
         </section>
 
+        <!-- Sección derecha (Mario en el vehículo) -->
         <section class="right">
-            <h2>Choose your Vehicle!</h2>
-            <div class="character-background">
+            
+            <div class="black-background-character">
+                <div class="title-container">
+                    <h2>Choose your Vehicle!</h2>
+                </div>
+            </div>
+
+            <div class="character-container">
                 <div class="character-background">
-                    <img src="../media/vehicles/mario_coche.png" alt="Mario en el coche">
+                    <img src="../media/vehicles/mario_coche.png" alt="Mario en el coche" class="character">
                 </div> 
             </div>
-        </section>
 
-        <button id="btnB" onclick="location.href='character.html'">
-            <img src="../media/general/btnB.png" alt="Volver">
-        </button>
-        <button id="btnA" onclick="location.href='index.html'">
-            <img src="../media/general/btnA.png" alt="Aceptar">
-        </button>
+        </section>
+        
     </main>
 
-    <script> /*Vehículos*/
+    <!-- Botones -->
+    <button id="btnB" onclick="location.href='character.html'">
+        <img src="../media/general/btnB.png" alt="Volver">
+    </button>
+    <button id="btnA" onclick="location.href='index.html'">
+        <img src="../media/general/btnA.png" alt="Aceptar">
+    </button>
+
+    <!-- Barra de prograso -->
+    <div class="bottom-image">
+        <img src="../media/vehicles/progressbar.png" alt="Barra de progreso">
+    </div>
+
+    <!-- Vehículos -->
+    <script>
         const vehicles = [
             'car', 'car1', 'car2', 'car3', 'car4', 'car5'
         ];
+
+        const marioImages = [
+        'mario_coche', 'mario_coche1', 'mario_coche2', 'mario_coche3', 'mario_coche4', 'mario_coche5'
+        ];
+
         let currentVehicleIndex = 0;
 
         function changeVehicle(direction) {
@@ -57,7 +80,10 @@
             } else if (currentVehicleIndex >= vehicles.length) {
                 currentVehicleIndex = 0;
             }
+
             document.getElementById("vehicle").src = "../media/vehicles/" + vehicles[currentVehicleIndex] + ".png";
+
+            document.querySelector(".character").src = "../media/vehicles/" + marioImages[currentVehicleIndex] + ".png";
         }
     </script>
     
