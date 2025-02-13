@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Vehicle Selection Page</title>
-
     <link rel="stylesheet" href="../css/vehicle.css">
 </head>
-
 <body>
+    <!-- Pantalla de carga -->
+    <div id="loading">Loading...</div>
+
     <main>
         <!-- Sección izquierda (Vehículos) -->
         <section class="left">
             <div class="black-background-vehicle"></div>
             <div class="vehicle-container">
-                <button class="arrow left-arrow" onclick="changeVehicle(-1)">
+                <!-- Flecha izquierda -->
+                <button class="arrow left-arrow" id="left-arrow">
                     <img src="../media/vehicles/flecha-izq.png" alt="Anterior">
                 </button>
 
+                <!-- Carrusel de vehículos -->
                 <div class="vehicle-background">
-                    <img id="vehicle" src="../media/vehicles/car.png" alt="Vehículo"  class="vehicle">
+                    <img id="vehicle" src="../media/vehicles/car.png" alt="Vehículo" class="vehicle">
                 </div>
-                
-                <button class="arrow right-arrow" onclick="changeVehicle(1)">
+
+                <!-- Flecha derecha -->
+                <button class="arrow right-arrow" id="right-arrow">
                     <img src="../media/vehicles/flecha_drch.png" alt="Siguiente">
                 </button>
             </div>
@@ -31,7 +34,6 @@
 
         <!-- Sección derecha (Mario en el vehículo) -->
         <section class="right">
-            
             <div class="black-background-character">
                 <div class="title-container">
                     <h2>Choose your Vehicle!</h2>
@@ -40,12 +42,10 @@
 
             <div class="character-container">
                 <div class="character-background">
-                    <img src="../media/vehicles/mario_coche.png" alt="Mario en el coche" class="character">
+                    <img id="mario" src="../media/vehicles/mario_coche.png" alt="Mario en el coche" class="character">
                 </div> 
             </div>
-
         </section>
-        
     </main>
 
     <!-- Botones -->
@@ -56,36 +56,57 @@
         <img src="../media/general/btnA.png" alt="Aceptar">
     </button>
 
-    <!-- Barra de prograso -->
+    <!-- Barra de progreso -->
     <div class="bottom-image">
         <img src="../media/vehicles/progressbar.png" alt="Barra de progreso">
     </div>
 
-    <!-- Vehículos -->
+    <!-- Script para el carrusel -->
     <script>
         const vehicles = [
-            'car', 'car1', 'car2', 'car3', 'car4', 'car5'
-        ];
-
-        const marioImages = [
-        'mario_coche', 'mario_coche1', 'mario_coche2', 'mario_coche3', 'mario_coche4', 'mario_coche5'
+            { name: 'car', marioImg: 'mario_coche.png' },
+            { name: 'car1', marioImg: 'mario_coche1.png' },
+            { name: 'car2', marioImg: 'mario_coche2.png' },
+            { name: 'car3', marioImg: 'mario_coche3.png' },
+            { name: 'car4', marioImg: 'mario_coche4.png' },
+            { name: 'car5', marioImg: 'mario_coche5.png' }
         ];
 
         let currentVehicleIndex = 0;
 
+        const vehicleImg = document.getElementById("vehicle");
+        const marioImg = document.getElementById("mario");
+        const title = document.querySelector('h2');
+
+        function updateTitle(vehicle) {
+            title.innerHTML = `You selected: ${vehicle}`;
+        }
+
         function changeVehicle(direction) {
             currentVehicleIndex += direction;
+
             if (currentVehicleIndex < 0) {
                 currentVehicleIndex = vehicles.length - 1;
             } else if (currentVehicleIndex >= vehicles.length) {
                 currentVehicleIndex = 0;
             }
 
-            document.getElementById("vehicle").src = "../media/vehicles/" + vehicles[currentVehicleIndex] + ".png";
+            const vehicle = vehicles[currentVehicleIndex];
+            updateTitle(vehicle.name);
 
-            document.querySelector(".character").src = "../media/vehicles/" + marioImages[currentVehicleIndex] + ".png";
+            // Cambiar imágenes de vehículo y Mario
+            vehicleImg.src = "../media/vehicles/" + vehicle.name + ".png";
+            marioImg.src = "../media/vehicles/" + vehicle.marioImg;
         }
+
+        // Controladores de evento para las flechas
+        document.getElementById('left-arrow').addEventListener('click', () => changeVehicle(-1));
+        document.getElementById('right-arrow').addEventListener('click', () => changeVehicle(1));
+
+        // Pantalla de carga
+        window.addEventListener('load', () => {
+            document.getElementById('loading').style.display = 'none';
+        });
     </script>
-    
 </body>
 </html>

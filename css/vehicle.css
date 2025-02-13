@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../media/general/background2.png'); /* Imagen de fondo */
+    background-image: url('../media/general/background2.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -36,7 +36,7 @@ main {
     position: relative;
 }
 
-.black-background-vehicle{
+.black-background-vehicle {
     position: absolute;
     width: 700px;
     height: 1080px;
@@ -45,7 +45,7 @@ main {
     transform: skew(-20deg);
 }
 
-.black-background-character{
+.black-background-character {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -57,7 +57,7 @@ main {
     z-index: 0;
 }
 
-.vehicle-container{
+.vehicle-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,46 +66,21 @@ main {
     height: 100%;
 }
 
-.vehicle-background{
+.vehicle-background {
     width: 300px;
     height: 400px;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
 }
 
 .vehicle {
-    width: 160%;
+    width: 160%; 
     height: auto;
     max-height: 1000%;
     object-fit: contain;
     z-index: 2;
-}
-
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 3;
-    width: 60px;
-    height: 60px;
-}
-
-.arrow img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.left-arrow {
-    left: -80px; 
-}
-
-.right-arrow {
-    right: -80px;
+    transition: opacity 0.5s ease-in-out; 
 }
 
 .character-container {
@@ -117,7 +92,7 @@ main {
 
 .title-container {
     position: absolute;
-    top: 20px;  
+    top: 20px;
     left: 50%;
     transform: translateX(-50%) skew(20deg);
     width: 100%;
@@ -125,21 +100,20 @@ main {
 }
 
 h2 {
-    font-size: 42px; 
+    font-size: 36px;
     color: rgba(243, 217, 83, 1);
     margin: 0;
     padding: 0;
     z-index: 2;
 }
 
-.character-background{
+.character-background {
     position: relative;
     width: 300px;
     height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
 }
 
 .character {
@@ -148,28 +122,61 @@ h2 {
     max-height: 1000%;
     object-fit: contain;
     z-index: 2;
+    transition: opacity 0.5s ease-in-out; 
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+    width: 60px;  
+    height: 60px;
+}
+
+.left-arrow {
+    left: -80px;
+}
+
+.right-arrow {
+    right: -80px;
+}
+
+.arrow img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#btnB, #btnA {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 #btnB {
-    position: absolute;
     top: 0px;
     left: 0px;
-    background: none;
-    border: none;
-    cursor: pointer;
 }
 
 #btnA {
-    position: absolute;
     bottom: 0px;
     right: 0px;
-    background: none;
-    border: none;
-    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease;
 }
 
 .bottom-image {
-    width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
