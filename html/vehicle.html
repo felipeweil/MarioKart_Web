@@ -99,14 +99,8 @@
             marioImg.src = "../media/vehicles/" + vehicle.marioImg;
         }
 
-        // Controladores de evento para las flechas
         document.getElementById('left-arrow').addEventListener('click', () => changeVehicle(-1));
         document.getElementById('right-arrow').addEventListener('click', () => changeVehicle(1));
-
-        // Pantalla de carga
-        window.addEventListener('load', () => {
-            document.getElementById('loading').style.display = 'none';
-        });
     </script>
 </body>
 </html>
