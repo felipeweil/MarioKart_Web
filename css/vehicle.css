@@ -38,23 +38,23 @@ main {
 
 .black-background-vehicle {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    transform: translate(-50%, -50%) skew(-20deg);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+    z-index: 1;
+}
+
+.black-background-character {
+    position: absolute;
     width: 700px;
     height: 1080px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     transform: skew(-20deg);
-}
-
-.black-background-character {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 700px;
-    height: 800px;
-    transform: translate(-50%, -50%) skew(-20deg);
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 0;
-    z-index: 0;
 }
 
 .vehicle-container {
@@ -84,10 +84,15 @@ main {
 }
 
 .character-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    position: relative;
+    width: 1000%;
+    height: 1000%;
 }
 
 .title-container {
@@ -104,7 +109,7 @@ h2 {
     color: rgba(243, 217, 83, 1);
     margin: 0;
     padding: 0;
-    z-index: 2;
+    z-index: 3;
 }
 
 .character-background {
@@ -117,12 +122,11 @@ h2 {
 }
 
 .character {
+    position: absolute;
     width: 180%;
     height: auto;
-    max-height: 1000%;
+    max-height: 300%;
     object-fit: contain;
-    z-index: 2;
-    transition: opacity 0.5s ease-in-out; 
 }
 
 .arrow {
