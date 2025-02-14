@@ -1,5 +1,6 @@
 $(document).ready(function()
 {
+    // Programación del cursor al hacer hover en char-icon
     let $arrCharIcons = $(".char-icon");
     let $arrCursors = $(".cursor");
 
@@ -34,44 +35,24 @@ $(document).ready(function()
         $arrCursors.eq(index).removeClass("showcursor"); 
     }
 
-    // const vehicles = [
-    //     { name: 'car', marioImg: 'mario_coche.png' },
-    //     { name: 'car1', marioImg: 'mario_coche1.png' },
-    //     { name: 'car2', marioImg: 'mario_coche2.png' },
-    //     { name: 'car3', marioImg: 'mario_coche3.png' },
-    //     { name: 'car4', marioImg: 'mario_coche4.png' },
-    //     { name: 'car5', marioImg: 'mario_coche5.png' }
-    // ];
+    
 
-    // let currentVehicleIndex = 0;
 
-    // const vehicleImg = document.getElementById("vehicle");
-    // const marioImg = document.getElementById("mario");
-    // const title = document.querySelector('h2');
 
-    // function updateTitle(vehicle) {
-    //     title.innerHTML = `You selected: ${vehicle}`;
-    // }
+    let $arrSelectedChar = $(".selected-char");
 
-    // function changeVehicle(direction) {
-    //     currentVehicleIndex += direction;
+    $($arrCharIcons).click(function () {
+        let index = $(this).index();
+        showChar(index);
+    });
 
-    //     if (currentVehicleIndex < 0) {
-    //         currentVehicleIndex = vehicles.length - 1;
-    //     } else if (currentVehicleIndex >= vehicles.length) {
-    //         currentVehicleIndex = 0;
-    //     }
+    function showChar(index) {
+        // for (i=0; i<$arrSelectedChar.length; i++) {
+        //     $arrSelectedChar[i].removeClass("show-char");
+        // };
+        $arrSelectedChar.removeClass("show-char");
 
-    //     const vehicle = vehicles[currentVehicleIndex];
-    //     updateTitle(vehicle.name);
-
-    //     // Cambiar imágenes de vehículo y Mario
-    //     vehicleImg.src = "../media/vehicles/" + vehicle.name + ".png";
-    //     marioImg.src = "../media/vehicles/" + vehicle.marioImg;
-    // }
-
-    // document.getElementById('left-arrow').addEventListener('click', () => changeVehicle(-1));
-    // document.getElementById('right-arrow').addEventListener('click', () => changeVehicle(1));
-
+        $arrSelectedChar.eq(index).addClass("show-char");
+    }
 
 })
