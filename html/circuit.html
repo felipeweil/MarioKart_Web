@@ -127,83 +127,84 @@
     </button>
     
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-    let copaVisible = document.getElementById('copa-champinon');
 
-    document.querySelectorAll('.icon').forEach(icon => {
-        icon.addEventListener('click', function () {
-            if (copaVisible) {
-                copaVisible.style.display = "none";
-            }
+        document.addEventListener("DOMContentLoaded", function () {
+            let copaVisible = document.getElementById('copa-champinon');
 
-            let nuevoCircuito = document.getElementById(this.getAttribute('data-circuit'));
-            if (nuevoCircuito) {
-                nuevoCircuito.style.display = "flex";
-                copaVisible = nuevoCircuito; 
-            }
+            document.querySelectorAll('.icon').forEach(icon => {
+                icon.addEventListener('click', function () {
+                    if (copaVisible) {
+                        copaVisible.style.display = "none";
+                    }
+
+                    let nuevoCircuito = document.getElementById(this.getAttribute('data-circuit'));
+                    if (nuevoCircuito) {
+                        nuevoCircuito.style.display = "flex";
+                        copaVisible = nuevoCircuito; 
+                    }
+                });
+            });
         });
-    });
-    
-});
-document.querySelectorAll('.icon img').forEach(icon => {
-    icon.addEventListener('click', function() {
-        document.querySelectorAll('.icon img').forEach(img => img.classList.remove('seleccionado'));
-        
-        this.classList.add('seleccionado');
-    });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    let copaSeleccionada = null;
-    let pistaSeleccionada = null;
-    const btnA = document.getElementById("btnA");
 
-    // Deshabilitar btnA al inicio
-    btnA.disabled = true;
-
-    // Manejo de selección de copas
-    document.querySelectorAll('.icon img').forEach(img => {
-        img.addEventListener('click', function() {
-            // Desmarcar cualquier otra copa seleccionada
-            document.querySelectorAll('.icon img').forEach(img => img.classList.remove('seleccionado'));
-            
-            // Marcar la nueva copa como seleccionada
-            this.classList.add('seleccionado');
-            copaSeleccionada = this;
-
-            // Mostrar la lista de circuitos correspondiente
-            document.querySelectorAll('.circuitos-lista').forEach(lista => lista.classList.add('hidden'));
-            let circuitoLista = document.getElementById(this.getAttribute('data-circuit'));
-            if (circuitoLista) {
-                circuitoLista.classList.remove('hidden');
-            }
-
-            verificarSeleccion();
+        document.querySelectorAll('.icon img').forEach(icon => {
+            icon.addEventListener('click', function() {
+                document.querySelectorAll('.icon img').forEach(img => img.classList.remove('seleccionado'));
+                
+                this.classList.add('seleccionado');
+            });
         });
-    });
+        document.addEventListener("DOMContentLoaded", function () {
+            let copaSeleccionada = null;
+            let pistaSeleccionada = null;
+            const btnA = document.getElementById("btnA");
 
-    // Manejo de selección de pistas
-    document.querySelectorAll('.circuitos-lista button').forEach(button => {
-        button.addEventListener('click', function() {
-            // Desmarcar cualquier otra pista seleccionada
-            document.querySelectorAll('.circuitos-lista button').forEach(btn => btn.classList.remove('seleccionado'));
-
-            // Marcar la nueva pista como seleccionada
-            this.classList.add('seleccionado');
-            pistaSeleccionada = this;
-
-            verificarSeleccion();
-        });
-    });
-
-    // Verificar si ambas selecciones están hechas para habilitar el botón
-    function verificarSeleccion() {
-        if (copaSeleccionada && pistaSeleccionada) {
-            btnA.disabled = false;
-        } else {
+            // Deshabilitar btnA al inicio
             btnA.disabled = true;
-        }
-    }
-});
+
+            // Manejo de selección de copas
+            document.querySelectorAll('.icon img').forEach(img => {
+                img.addEventListener('click', function() {
+                    // Desmarcar cualquier otra copa seleccionada
+                    document.querySelectorAll('.icon img').forEach(img => img.classList.remove('seleccionado'));
+                    
+                    // Marcar la nueva copa como seleccionada
+                    this.classList.add('seleccionado');
+                    copaSeleccionada = this;
+
+                    // Mostrar la lista de circuitos correspondiente
+                    document.querySelectorAll('.circuitos-lista').forEach(lista => lista.classList.add('hidden'));
+                    let circuitoLista = document.getElementById(this.getAttribute('data-circuit'));
+                    if (circuitoLista) {
+                        circuitoLista.classList.remove('hidden');
+                    }
+
+                    verificarSeleccion();
+                });
+            });
+
+            // Manejo de selección de pistas
+            document.querySelectorAll('.circuitos-lista button').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Desmarcar cualquier otra pista seleccionada
+                    document.querySelectorAll('.circuitos-lista button').forEach(btn => btn.classList.remove('seleccionado'));
+
+                    // Marcar la nueva pista como seleccionada
+                    this.classList.add('seleccionado');
+                    pistaSeleccionada = this;
+
+                    verificarSeleccion();
+                });
+            });
+
+            // Verificar si ambas selecciones están hechas para habilitar el botón
+            function verificarSeleccion() {
+                if (copaSeleccionada && pistaSeleccionada) {
+                    btnA.disabled = false;
+                } else {
+                    btnA.disabled = true;
+                }
+            }
+        });
 
     </script>
 </body>

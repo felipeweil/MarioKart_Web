@@ -1,11 +1,12 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
-    background-image:url("../media/circuit/bg.png");
-    min-height: 100vh; 
-    display: flex; 
+    background-image: url("../media/circuit/bg.png");
+    min-height: 100vh;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -18,37 +19,36 @@ body {
     flex-direction: column;
     justify-content: center;
     margin: 20px;
-    background: none; 
 }
 .iconsfila1, .iconsfila2 {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     gap: 10px;
 }
 .iconsfila1 {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 .icon img {
     width: 150px;
     height: 150px;
-    background: none; 
-    box-shadow: none; 
-    border: none;  
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.icon img.seleccionado {
+    filter: brightness(1.5) sepia(1) hue-rotate(20deg) saturate(3);
 }
 button {
-    background: none; 
-    border: none; 
-    padding: 0; 
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 button img {
-    display: block; 
-    background: transparent; 
-    cursor: pointer;
+    display: block;
+    background: transparent;
 }
-#copa-champinon {
-    display: flex;
-}
-
 .circuitos-lista {
     display: none;
     margin-top: 20px;
@@ -61,9 +61,14 @@ button img {
     padding: 10px;
     border: none;
     cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 .circuitos-lista button:hover {
-    background-color: #fff700; 
+    background-color: #fff700;
+}
+.circuitos-lista button.seleccionado {
+    background-color: #fff700;
+    transform: scale(1.1);
 }
 .barra img {
     width: 100%;
@@ -74,42 +79,27 @@ button img {
 .hidden {
     display: none;
 }
-#btnB {
+#btnB, #btnA {
     position: absolute;
-    top: 0px;
-    left: 0px;
     background: none;
     border: none;
     cursor: pointer;
+}
+#btnB {
+    top: 0;
+    left: 0;
 }
 #btnA {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    background: none;
-    border: none;
-    cursor: pointer;
+    bottom: 0;
+    right: 0;
 }
-.icon img.seleccionado {
-    filter: brightness(1.5) sepia(1) hue-rotate(20deg) saturate(3);
-}
-
-/* Efecto de selección en copas */
-.icon img.seleccionado {
-    filter: brightness(1.5) sepia(1) hue-rotate(20deg) saturate(3);
-}
-
-/* Efecto de selección en pistas */
-.circuitos-lista button.seleccionado {
-    background-color: #fff700;
-    transform: scale(1.1);
-}
-
-/* Estilo para el botón deshabilitado */
 #btnA:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    transform: none;
 }
-
+button:not(.seleccionado):not(:disabled):hover {
+    transform: scale(1.1);
+}
 
 
