@@ -1,17 +1,7 @@
 # MarioKart_Web
 
-## INDEX (HOME PAGE)
-- Contains contact form
-- Contains link to DEMO (starting on circuit.html)
-- Has to be responsive
+This web DEMO is an assignment for our Advanced Web Design class.
 
-## CIRCUIT PAGE
-- Contains link to character.html
+The breifing was to develop a web showing the Demo of a game using html, css and js.
 
-## CHARACTER PAGE
-- Contains link to vehicle.html
-- Only Mario can be selected
-
-## VEHICLE PAGE
-- Contains link to character.html and index.html
--  Only one car can be selected
+We decided to do the web about Mario Kart Deluxe 8 and tried to design a serious verision of the game, maintaining its familiar aesthetic.
