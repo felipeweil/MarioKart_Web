@@ -67,6 +67,14 @@ img {
 #btn_demo {
     width: 25%;
     height: auto;
+    background: none;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1); 
 }
 
 .form {
@@ -214,7 +222,6 @@ img {
 
 #btn_demo {
   width: 50%;
-  height: auto;
 }
 
   
