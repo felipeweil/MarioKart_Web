@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: "Russo One";
+    font-weight: 400;
 }
 
 body {
@@ -14,7 +17,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
     overflow: hidden;
     position: relative;
 }
@@ -28,6 +30,14 @@ main {
     position: relative;
 }
 
+h2 {
+    font-size: 36px;
+    color: rgba(243, 217, 83, 1);
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
 .left, .right {
     width: 50%;
     display: flex;
@@ -38,18 +48,6 @@ main {
 
 .black-background-vehicle {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 700px;
-    height: 700px;
-    transform: translate(-50%, -50%) skew(-20deg);
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 0;
-    z-index: 1;
-}
-
-.black-background-character {
-    position: absolute;
     width: 700px;
     height: 1080px;
     background: rgba(0, 0, 0, 0.5);
@@ -57,13 +55,30 @@ main {
     transform: skew(-20deg);
 }
 
+.black-background-character {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    transform: translate(-50%, -50%) skew(-20deg);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+    z-index: 0;
+}
+
 .vehicle-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     position: relative;
     width: 400px;
-    height: 100%;
+    height: auto;
+    text-align: center;
 }
 
 .vehicle-background {
@@ -74,25 +89,25 @@ main {
     align-items: center;
 }
 
+.vehicle-name {
+    font-size: 36px;
+    color: rgba(243, 217, 83, 1);
+    text-align: center;
+    text-transform: none; 
+    width: 100%;
+    position: absolute;
+    top: 470px;
+    left: -25%;
+    z-index: 2;
+}
+
 .vehicle {
+    left: center;
     width: 160%; 
     height: auto;
     max-height: 1000%;
     object-fit: contain;
     z-index: 2;
-    transition: opacity 0.5s ease-in-out; 
-}
-
-.character-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 1000%;
-    height: 1000%;
 }
 
 .title-container {
@@ -102,16 +117,28 @@ main {
     transform: translateX(-50%) skew(20deg);
     width: 100%;
     text-align: center;
-}
-
-h2 {
-    font-size: 36px;
-    color: rgba(243, 217, 83, 1);
-    margin: 0;
-    padding: 0;
     z-index: 3;
 }
 
+.mario-title {
+    transform: none !important;
+    color: rgba(243, 217, 83, 1);
+    position: absolute;
+    top: 470px;
+    left: -35%;
+    transform: translateX(-50%);
+}
+
+.character-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .character-background {
     position: relative;
     width: 300px;
@@ -129,6 +156,11 @@ h2 {
     object-fit: contain;
 }
 
+.arrow:hover {
+    transform: scale(1.001);
+    transition: transform 0.2s;
+}
+
 .arrow {
     position: absolute;
     top: 50%;
@@ -137,8 +169,8 @@ h2 {
     border: none;
     cursor: pointer;
     z-index: 3;
-    width: 60px;  
-    height: 60px;
+    width: 80px;  
+    height: 80px;
 }
 
 .left-arrow {
