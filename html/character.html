@@ -4,19 +4,151 @@
 
 
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Selection Page</title>
-
     <link rel="stylesheet" href="../css/character.css">
 </head>
 
 
 
 
-<body>
 
+<body>
+    <!-- Pantalla de carga -->
+    <!-- <div id="loading">Loading...</div> -->
+
+    <main>
+        <!-- Sección izquierda (Vehículos) -->
+        <section class="left">
+            <div class="black-background-character">
+                <div class="title-container">
+                    <h2>Choose your Vehicle!</h2>
+                </div>
+            </div>
+
+            <div class="character-container">
+                <div class="character-background">
+                    <img id="mario" src="../media/character/Mario_mario_kart_8_deluxe.png" alt="Mario en el coche" class="character">
+                </div> 
+            </div>
+        </section>
+
+        <!-- Sección derecha (Mario en el vehículo) -->
+        <section class="right">
+            <div class="black-background-vehicle"></div>
+
+            <div class="skew">
+                <div class="character-cont">
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                    <div class="char-icon">
+                        <img src="../media/character/mario_th.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- <div class="vehicle-container"> -->
+                <!-- Flecha izquierda -->
+                <!-- <button class="arrow left-arrow" id="left-arrow">
+                    <img src="../media/vehicles/flecha-izq.png" alt="Anterior">
+                </button> -->
+
+                <!-- Carrusel de vehículos -->
+                <!-- <div class="vehicle-background">
+                    <img id="vehicle" src="../media/vehicles/car.png" alt="Vehículo" class="vehicle">
+                </div> -->
+
+                <!-- Flecha derecha -->
+                <!-- <button class="arrow right-arrow" id="right-arrow">
+                    <img src="../media/vehicles/flecha_drch.png" alt="Siguiente">
+                </button> -->
+            <!-- </div>  -->
+
+
+            
+        </section>
+    </main>
+
+    <!-- Botones -->
     <button id="btnB" onclick="location.href='circuit.html'">
         <img src="../media/general/btnB.png" alt="Volver">
     </button>
@@ -24,24 +156,56 @@
         <img src="../media/general/btnA.png" alt="Aceptar">
     </button>
 
-    <div><img src="../media/character/char_progressBar.png" alt="" id="progressbar"></div>
+    <!-- Barra de progreso -->
+    <div class="bottom-image">
+        <img src="../media/character/char_progressBar.png" alt="Barra de progreso">
+    </div>
 
-    <main>
-        <div class="cont skew blackbg">
-            <div class="blackbg"><h2 class="notskew">Choose your character!</h2></div>
-            <div class="notskew"><img src="" alt=""></div>
-            <div class="blackbg"><h2 class="notskew" >MARIO</h2></div>
-        </div>
-    
-        <div class="cont spcont skew blackbg">
-            <img src="../media/character/mario_th.png" alt="" class="notskew">
-        </div>
-    </main>
+    <!-- Script para el carrusel -->
+    <script>
+        const vehicles = [
+            { name: 'car', marioImg: 'mario_coche.png' },
+            { name: 'car1', marioImg: 'mario_coche1.png' },
+            { name: 'car2', marioImg: 'mario_coche2.png' },
+            { name: 'car3', marioImg: 'mario_coche3.png' },
+            { name: 'car4', marioImg: 'mario_coche4.png' },
+            { name: 'car5', marioImg: 'mario_coche5.png' }
+        ];
 
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- JS script -->
-    <script src="../js/character.js"></script>
-    
+        let currentVehicleIndex = 0;
+
+        const vehicleImg = document.getElementById("vehicle");
+        const marioImg = document.getElementById("mario");
+        const title = document.querySelector('h2');
+
+        function updateTitle(vehicle) {
+            title.innerHTML = `You selected: ${vehicle}`;
+        }
+
+        function changeVehicle(direction) {
+            currentVehicleIndex += direction;
+
+            if (currentVehicleIndex < 0) {
+                currentVehicleIndex = vehicles.length - 1;
+            } else if (currentVehicleIndex >= vehicles.length) {
+                currentVehicleIndex = 0;
+            }
+
+            const vehicle = vehicles[currentVehicleIndex];
+            updateTitle(vehicle.name);
+
+            // Cambiar imágenes de vehículo y Mario
+            vehicleImg.src = "../media/vehicles/" + vehicle.name + ".png";
+            marioImg.src = "../media/vehicles/" + vehicle.marioImg;
+        }
+
+        document.getElementById('left-arrow').addEventListener('click', () => changeVehicle(-1));
+        document.getElementById('right-arrow').addEventListener('click', () => changeVehicle(1));
+
+        // Pantalla de carga
+        window.addEventListener('load', () => {
+            document.getElementById('loading').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
