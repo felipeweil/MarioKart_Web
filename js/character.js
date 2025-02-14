@@ -1,7 +1,5 @@
 $(document).ready(function()
 {
-    console.log("Script and jQuery loaded");
-
     let $arrCharIcons = $(".char-icon");
     let $arrCursors = $(".cursor");
 
@@ -16,10 +14,22 @@ $(document).ready(function()
         }
     );
 
+    /**
+     * 
+     * @param {number} index 
+     * 
+     * Esta función muestra el cursor del mismo index (es decir, misma posición) que el char-icon sobre el que se ha hecho hover (desde donde se llama la función.)
+     */
     function showCursor(index) {
         $arrCursors.eq(index).addClass("showcursor"); 
     }
 
+    /**
+     * 
+     * @param {number} index 
+     * 
+     * Esta función oculta el cursor del mismo index (es decir, misma posición) que el char-icon sobre el que se ha hecho hover (desde donde se llama la función.)
+     */
     function hideCursor(index) {
         $arrCursors.eq(index).removeClass("showcursor"); 
     }
@@ -62,11 +72,6 @@ $(document).ready(function()
 
     // document.getElementById('left-arrow').addEventListener('click', () => changeVehicle(-1));
     // document.getElementById('right-arrow').addEventListener('click', () => changeVehicle(1));
-
-    // // Pantalla de carga
-    // window.addEventListener('load', () => {
-    //     document.getElementById('loading').style.display = 'none';
-    // });
 
 
 })

@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: "Russo One";
+    font-weight: 400;
 }
 
 body {
@@ -14,7 +17,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
     overflow: hidden;
     position: relative;
 }
@@ -26,6 +28,14 @@ main {
     width: 90%;
     height: 90%;
     position: relative;
+}
+
+h2 {
+    font-size: 36px;
+    color: rgba(243, 217, 83, 1);
+    margin: 0;
+    padding: 0;
+    z-index: 3;
 }
 
 .left, .right {
@@ -68,15 +78,14 @@ main {
     flex-wrap: wrap;
 }
 
-#cursor-cont {
-    position: absolute;
-    bottom: 0px;
-    z-index: 1;
-}
 
 .skew {
     transform: skew(-20deg);
     z-index: 1;
+}
+
+.notskew {
+    transform: skew(20deg);
 }
 
 .char-icon {    
@@ -123,20 +132,21 @@ main {
 
 .title-container {
     position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%) skew(20deg);
-    width: 100%;
+    top: 190px;
+    width: 700px;
     text-align: center;
+    background-color: black;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-h2 {
-    font-size: 36px;
-    color: rgba(243, 217, 83, 1);
-    margin: 0;
-    padding: 0;
-    z-index: 3;
+.name-container {
+    top: 470px;
+    right: -87px;
 }
+
 
 .character-background {
     position: relative;
@@ -155,30 +165,17 @@ h2 {
     object-fit: contain;
 }
 
-.arrow {
+
+button:hover {
+    transform: scale(1.1); 
+}
+
+.bottom-image {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 3;
-    width: 60px;  
-    height: 60px;
-}
-
-.left-arrow {
-    left: -80px;
-}
-
-.right-arrow {
-    right: -80px;
-}
-
-.arrow img {
+    bottom: 10px;
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    display: flex;
+    justify-content: center;
 }
 
 #btnB, #btnA {
@@ -186,6 +183,7 @@ h2 {
     background: none;
     border: none;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 #btnB {
@@ -198,15 +196,8 @@ h2 {
     right: 0px;
 }
 
-button:hover {
-    transform: scale(1.1); 
-    transition: transform 0.3s ease;
-}
-
-.bottom-image {
+#cursor-cont {
     position: absolute;
-    bottom: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    bottom: 0px;
+    z-index: 1;
 }

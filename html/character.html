@@ -10,6 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Selection Page</title>
     <link rel="stylesheet" href="../css/character.css">
+
+    <!-- Typography -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Russo One">
 </head>
 
 
@@ -21,22 +24,25 @@
     <!-- <div id="loading">Loading...</div> -->
 
     <main>
-        <!-- Sección izquierda (Vehículos) -->
+        <!-- Sección izquierda (Personaje seleccionado) -->
         <section class="left">
             <div class="black-background-character">
                 <div class="title-container">
-                    <h2>Choose your Vehicle!</h2>
+                    <h2 class="notskew">Choose your Character!</h2>
                 </div>
             </div>
 
             <div class="character-container">
                 <div class="character-background">
                     <img id="mario" src="../media/character/Mario_mario_kart_8_deluxe.png" alt="Mario en el coche" class="character">
+                    <div class="title-container name-container skew">
+                        <h2 class="notskew">Mario</h2>
+                    </div>
                 </div> 
             </div>
         </section>
 
-        <!-- Sección derecha (Mario en el vehículo) -->
+        <!-- Sección derecha (iconos de los personajes) -->
         <section class="right">
             <div class="black-background-vehicle"></div>
 
@@ -204,27 +210,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-            <!-- <div class="vehicle-container"> -->
-                <!-- Flecha izquierda -->
-                <!-- <button class="arrow left-arrow" id="left-arrow">
-                    <img src="../media/vehicles/flecha-izq.png" alt="Anterior">
-                </button> -->
-
-                <!-- Carrusel de vehículos -->
-                <!-- <div class="vehicle-background">
-                    <img id="vehicle" src="../media/vehicles/car.png" alt="Vehículo" class="vehicle">
-                </div> -->
-
-                <!-- Flecha derecha -->
-                <!-- <button class="arrow right-arrow" id="right-arrow">
-                    <img src="../media/vehicles/flecha_drch.png" alt="Siguiente">
-                </button> -->
-            <!-- </div>  -->
-
-
             
         </section>
     </main>
@@ -242,6 +227,7 @@
         <img src="../media/character/char_progressBar.png" alt="Barra de progreso">
     </div>
 
+    <!-- jQuery & JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../js/character.js"></script>
 </body>
