@@ -122,6 +122,87 @@
                         <img src="../media/character/unknown_th.png" alt="">
                     </div>
                 </div>
+                <div class="character-cont" id="cursor-cont">
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                    <div class="cursor">
+                        <img src="../media/character/cursor.png" alt="">
+                    </div>
+                </div>
             </div>
 
 
@@ -161,51 +242,7 @@
         <img src="../media/character/char_progressBar.png" alt="Barra de progreso">
     </div>
 
-    <!-- Script para el carrusel -->
-    <script>
-        const vehicles = [
-            { name: 'car', marioImg: 'mario_coche.png' },
-            { name: 'car1', marioImg: 'mario_coche1.png' },
-            { name: 'car2', marioImg: 'mario_coche2.png' },
-            { name: 'car3', marioImg: 'mario_coche3.png' },
-            { name: 'car4', marioImg: 'mario_coche4.png' },
-            { name: 'car5', marioImg: 'mario_coche5.png' }
-        ];
-
-        let currentVehicleIndex = 0;
-
-        const vehicleImg = document.getElementById("vehicle");
-        const marioImg = document.getElementById("mario");
-        const title = document.querySelector('h2');
-
-        function updateTitle(vehicle) {
-            title.innerHTML = `You selected: ${vehicle}`;
-        }
-
-        function changeVehicle(direction) {
-            currentVehicleIndex += direction;
-
-            if (currentVehicleIndex < 0) {
-                currentVehicleIndex = vehicles.length - 1;
-            } else if (currentVehicleIndex >= vehicles.length) {
-                currentVehicleIndex = 0;
-            }
-
-            const vehicle = vehicles[currentVehicleIndex];
-            updateTitle(vehicle.name);
-
-            // Cambiar imágenes de vehículo y Mario
-            vehicleImg.src = "../media/vehicles/" + vehicle.name + ".png";
-            marioImg.src = "../media/vehicles/" + vehicle.marioImg;
-        }
-
-        document.getElementById('left-arrow').addEventListener('click', () => changeVehicle(-1));
-        document.getElementById('right-arrow').addEventListener('click', () => changeVehicle(1));
-
-        // Pantalla de carga
-        window.addEventListener('load', () => {
-            document.getElementById('loading').style.display = 'none';
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../js/character.js"></script>
 </body>
 </html>

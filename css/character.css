@@ -64,8 +64,14 @@ main {
     position: relative;
     width: 700px;
     height: 100%;
-    z-index: 1;
+    z-index: 2;
     flex-wrap: wrap;
+}
+
+#cursor-cont {
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
 }
 
 .skew {
@@ -75,6 +81,15 @@ main {
 
 .char-icon {    
     transform: skew(20deg);
+}
+
+.cursor {    
+    transform: skew(20deg);
+    opacity: 0;
+}
+
+.showcursor {
+    opacity: 100;
 }
 
 .vehicle-background {
