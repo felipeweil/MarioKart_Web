@@ -4,6 +4,10 @@
 }
 body {
     background-image:url("../media/circuit/bg.png");
+    min-height: 100vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }
 .container {
     max-width: 800px;
@@ -24,7 +28,6 @@ body {
 .iconsfila1 {
     margin-bottom: 20px; 
 }
-
 .icon img {
     width: 150px;
     height: 150px;
@@ -37,7 +40,6 @@ button {
     border: none; 
     padding: 0; 
 }
-
 button img {
     display: block; 
     background: transparent; 
@@ -46,6 +48,7 @@ button img {
 #copa-champinon {
     display: flex;
 }
+
 .circuitos-lista {
     display: none;
     margin-top: 20px;
@@ -79,7 +82,6 @@ button img {
     border: none;
     cursor: pointer;
 }
-
 #btnA {
     position: absolute;
     bottom: 0px;
@@ -91,5 +93,23 @@ button img {
 .icon img.seleccionado {
     filter: brightness(1.5) sepia(1) hue-rotate(20deg) saturate(3);
 }
+
+/* Efecto de selección en copas */
+.icon img.seleccionado {
+    filter: brightness(1.5) sepia(1) hue-rotate(20deg) saturate(3);
+}
+
+/* Efecto de selección en pistas */
+.circuitos-lista button.seleccionado {
+    background-color: #fff700;
+    transform: scale(1.1);
+}
+
+/* Estilo para el botón deshabilitado */
+#btnA:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 
 
